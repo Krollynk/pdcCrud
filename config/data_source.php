@@ -4,7 +4,7 @@ class DataSource {
     private static $host = "localhost";
     private static $username = "root";
     private static $password = "";
-    private static $database = "pdcDb";
+    private static $database = "pdcdb";
 
     public static function connect() {
 
