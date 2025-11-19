@@ -9,7 +9,6 @@ class MainController {
     }
     public static function viewPaisesNuevo()
     {
-        self::requireAuth();
         renderLayout('view_paises_nuevo');
     }
     public static function viewPaisesEditar(Request $request)

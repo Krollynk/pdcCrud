@@ -55,7 +55,7 @@ header {
 .menu a:hover {
     background-color: #374151;
 }
-
+ /* General */
 body {
     margin-left: 13%;
 }
@@ -99,7 +99,7 @@ h2 {
     border-radius: 20px;
 }
 
-/* Estilo de las tablas */
+/* Tablas */
 .main_table {
     border-collapse: collapse;
     border-top-left-radius: 15px;
@@ -138,4 +138,32 @@ table tr:hover {
 .pagination {
     display: flex;
     justify-content: space-between;
+}
+
+/* Formularios */
+
+.main_form{
+    margin: auto;
+    width: fit-content;
+}
+.main_div{
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.main_div p{
+    color: #1f2937;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
+    text-align: right;
+    width: 120px;
+}
+
+.input_text{
+    margin-right: 5px;
+    border: rgba(11, 11, 163, 0.28) solid 1px;
+    color: rgba(0, 0, 0, 0.72);
+    padding-left: 5px;
+    height: 27px;
 }

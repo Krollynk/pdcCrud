@@ -1,7 +1,7 @@
 <div class="main_content">
     <div class="title_bar">
         <h2>Listado de Paises</h2>
-        <a href="" class="btn-agregar">Agregar</a>
+        <a href="/view_paises_nuevo" class="btn-agregar">Agregar</a>
     </div>
     <table class="main_table" id="main_table">
         <thead>
