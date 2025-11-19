@@ -14,11 +14,16 @@ $request = new Request();
 $response = new Response();
 $router = new Router();
 
-
+//ruta raíz
 $router->get('/', [MainController::class, 'viewPaises']);
 
+//rutas get
 $router->get('/view_paises', [MainController::class, 'viewPaises']);
 $router->get('/view_paises_nuevo', [MainController::class, 'viewPaisesNuevo']);
 $router->get('/view_paises_editar', [MainController::class, 'viewPaisesEditar']);
+
+//rutas post
+$router->post('/guardar_pais', [PaisesController::class, 'insertPaises']);
+$router->post('/actualizar_pais', [PaisesController::class, 'updatePaises']);
 
 $router->dispatch($request);

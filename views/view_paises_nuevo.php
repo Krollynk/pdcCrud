@@ -8,11 +8,11 @@
 
         <div class="main_div">
             <p>Pais</p>
-            <input size="60" type="text" class="paiPais input_text" name="paiPais">
+            <input size="60" type="text" class="paiPais input_text" name="paiPais" autocomplete="off" required>
         </div>
         <div class="main_div">
             <p>Siglas</p>
-            <input size="30" type="text" class="paiSiglas input_text" name="paiSiglas">
+            <input size="30" type="text" class="paiSiglas input_text" name="paiSiglas" autocomplete="off" required>
         </div>
     </form>
 </div>

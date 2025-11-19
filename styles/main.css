@@ -76,6 +76,7 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* botones */
 .btn-agregar {
     position: absolute;
     right: 3%;
@@ -91,6 +92,44 @@ h2 {
 .btn-agregar:hover {
     background-color: #155bb5;
 }
+
+.btn_eliminar{
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.btn_editar{
+    background-color: #1f2937;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.btn_editar:hover {
+    background-color: #354261;
+}
+
+.btn_eliminar:hover {
+    background-color: #d98686;
+}
+
+/* Contenido principal */
 
 .main_content {
     padding: 20px;
