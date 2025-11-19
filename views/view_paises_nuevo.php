@@ -1,6 +1,6 @@
 <div class="grid_box main_content">
     <div class="title_bar">
-        <h2>Listado de Paises</h2>
+        <h2>Agregar País</h2>
         <button type="submit" form="main_form" class="btn-agregar">Agregar</button>
     </div>
     <form action="/guardar_pais" class="main_form" id="main_form" method="post">
