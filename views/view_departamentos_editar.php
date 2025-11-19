@@ -13,11 +13,11 @@
         </div>
         <div class="main_div">
             <p>Pais</p>
-            <select class="paiPais input_text" name="paiPais" id="dataSelect" required></select>
+            <select class="paiPais input_text" name="paiPais" id="dataSelectPais" required></select>
         </div>
     </form>
 </div>
 <script>
     const registros = <?php echo json_encode($data); ?>;
 </script>
-<script src="/js/jsDataSelect.js"></script>
+<script src="../js/jsDataSelectPaises.js"></script>

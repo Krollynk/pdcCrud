@@ -66,6 +66,36 @@ function viewDepartamentos(registrosPagina){
     });
 }
 
+function viewMunicipios(registrosPagina){
+    registrosPagina.forEach(registro => {
+        const fila = tabla.insertRow();
+        fila.id = registro.munId;
+        const celdaMunicipio = fila.insertCell();
+        const celdaDepartamento = fila.insertCell();
+        const celdaPais = fila.insertCell();
+        const celdaAcciones = fila.insertCell();
+
+        const btnEditar = document.createElement('a');
+        const btnEliminar = document.createElement('a');
+
+        btnEditar.textContent = "Editar";
+        btnEliminar.textContent = "Eliminar";
+
+        btnEditar.href = "/view_municipios_editar?id=" + registro.munId;
+        btnEliminar.href = "/municipios_eliminar?id=" + registro.munId;
+
+        btnEditar.classList.add("btn_editar");
+        btnEliminar.classList.add("btn_eliminar");
+
+        celdaMunicipio.textContent = registro.munMunicipio
+        celdaDepartamento.textContent = registro.depDepartamento;
+        celdaPais.textContent = registro.paiPais;
+
+        celdaAcciones.appendChild(btnEditar);
+        celdaAcciones.appendChild(btnEliminar);
+    });
+}
+
 function mostrarTabla(pagina) {
     tabla.innerHTML = ''; // Limpiar la tabla
     const inicio = (pagina - 1) * registrosPorPagina;
@@ -76,6 +106,8 @@ function mostrarTabla(pagina) {
         viewPaises(registrosPagina);
     }else if(window.location.pathname === '/view_departamentos'){
         viewDepartamentos(registrosPagina);
+    }else if(window.location.pathname === '/view_municipios'){
+        viewMunicipios(registrosPagina);
     }
 }
 

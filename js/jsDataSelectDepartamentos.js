@@ -1,15 +1,15 @@
-async function autocompletePaises() {
-    const select = document.getElementById("dataSelect");
+async function autocompleteDepartamentos() {
+    const select = document.getElementById("dataSelectDepartamento");
 
     try {
-        const response = await fetch("/functions/api_paises.php");
+        const response = await fetch("/functions/api_departamentos.php");
         const paises = await response.json();
 
         select.innerHTML = "";
 
         const optDefault = document.createElement("option");
         optDefault.value = "";
-        optDefault.textContent = "Seleccione un país";
+        optDefault.textContent = "Seleccione un departamento";
         select.appendChild(optDefault);
 
         paises.forEach(p => {
@@ -19,7 +19,7 @@ async function autocompletePaises() {
             select.appendChild(option);
         });
 
-        const valorActual = registros[0].paiId;
+        const valorActual = registros[0].depId;
         if (valorActual) select.value = valorActual;
 
     } catch (error) {
@@ -27,4 +27,4 @@ async function autocompletePaises() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", autocompletePaises);
+document.addEventListener("DOMContentLoaded", autocompleteDepartamentos);
