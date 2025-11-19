@@ -14,7 +14,8 @@ if(count($resultado) > 0) {
     foreach($resultado as $row){
         $paises_array[] = [
             "id" => $row["depId"],
-            "nombre" => $row["depDepartamento"]
+            "nombre" => $row["depDepartamento"],
+            "paiId" => $row["paiId"],
         ];
     }
 }
