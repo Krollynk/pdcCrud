@@ -8,16 +8,23 @@ require_once __DIR__ . '/core/Request.php';
 require_once __DIR__ . '/core/Response.php';
 require_once __DIR__ . '/functions/view_helper.php';
 require_once __DIR__ . '/controllers/MainController.php';
+require_once __DIR__ . '/controllers/PaisesController.php';
 
 $request = new Request();
 $response = new Response();
 $router = new Router();
 
-
+//ruta raíz
 $router->get('/', [MainController::class, 'viewPaises']);
 
+//rutas get
 $router->get('/view_paises', [MainController::class, 'viewPaises']);
 $router->get('/view_paises_nuevo', [MainController::class, 'viewPaisesNuevo']);
 $router->get('/view_paises_editar', [MainController::class, 'viewPaisesEditar']);
+$router->get('/paises_eliminar', [PaisesController::class, 'deletePaises']);
+
+//rutas post
+$router->post('/guardar_pais', [PaisesController::class, 'insertPaises']);
+$router->post('/actualizar_pais', [PaisesController::class, 'updatePaises']);
 
 $router->dispatch($request);

@@ -3,7 +3,7 @@ class DatabaseExecutor {
     private $conn;
 
     public function __construct() {
-        $this->conn = Database::connect();
+        $this->conn = DataSource::connect();
     }
 
     public function execute($mysql): array {

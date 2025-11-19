@@ -3,9 +3,9 @@
 class MainController {
     public static function viewPaises()
     {
-        /*$controller = new ClientesController();*/
-        $resultado = []; /*$controller->getClientes();*/
-        renderLayout('view_paises'/*, $resultado*/);
+        $controller = new PaisesController();
+        $resultado = $controller->getPaises();
+        renderLayout('view_paises', $resultado);
     }
     public static function viewPaisesNuevo()
     {
@@ -13,12 +13,8 @@ class MainController {
     }
     public static function viewPaisesEditar(Request $request)
     {
-        /*if(empty($request->query('id'))) {
-            Response::json(['success'=>false,'mensaje'=>'Debe seleccionar un cliente']);
-            return;
-        }
-        $controller = new ClientesController();
-        $resultado = $controller->GetClientesPorId($request->query('id'));*/
-        renderLayout('view_paises_editar'/*, $resultado*/);
+        $controller = new PaisesController();
+        $resultado = $controller->getPaisesById($request->query('id'));
+        renderLayout('view_paises_editar', $resultado);
     }
 }
