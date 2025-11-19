@@ -116,4 +116,32 @@ class PaisesController {
 
         return $resultado;
     }
+
+    public static function deletePaises(Request $request) {
+        $mysql = array(
+            'tipo' => 'update',
+            'tabla' => 'pdcPais',
+            'campos' => array(
+                array(
+                    'campo' => 'eliminado',
+                    'valor' => '1',
+                ),
+            ),
+            'where'=> array(
+                array(
+                    'where'=> 't.paiId = '.$request->query('id'),
+                    'values'=> array(),
+                    'type'=> 'add',
+                ),
+            ),
+        );
+        $executor = new DatabaseExecutor();
+        $resultado = $executor->execute($mysql);
+
+        if(!isset($resultado['error'])){
+            Response::redirect('/view_paises');
+        }else{
+            var_dump($resultado);die;
+        }
+    }
 }

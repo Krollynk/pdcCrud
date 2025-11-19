@@ -21,6 +21,7 @@ $router->get('/', [MainController::class, 'viewPaises']);
 $router->get('/view_paises', [MainController::class, 'viewPaises']);
 $router->get('/view_paises_nuevo', [MainController::class, 'viewPaisesNuevo']);
 $router->get('/view_paises_editar', [MainController::class, 'viewPaisesEditar']);
+$router->get('/paises_eliminar', [PaisesController::class, 'deletePaises']);
 
 //rutas post
 $router->post('/guardar_pais', [PaisesController::class, 'insertPaises']);

@@ -25,7 +25,7 @@ function viewPaises(registrosPagina){
         btnEliminar.textContent = "Eliminar";
 
         btnEditar.href = "/view_paises_editar?id=" + registro.paiId;
-        btnEliminar.href = "/view_paises_eliminar?id=" + registro.paiId;
+        btnEliminar.href = "/paises_eliminar?id=" + registro.paiId;
 
         btnEditar.classList.add("btn_editar");
         btnEliminar.classList.add("btn_eliminar");
