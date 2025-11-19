@@ -3,9 +3,9 @@
 class MainController {
     public static function viewPaises()
     {
-        /*$controller = new ClientesController();*/
-        $resultado = []; /*$controller->getClientes();*/
-        renderLayout('view_paises'/*, $resultado*/);
+        $controller = new PaisesController();
+        $resultado = $controller->getPaises();
+        renderLayout('view_paises', $resultado);
     }
     public static function viewPaisesNuevo()
     {

@@ -8,6 +8,7 @@ require_once __DIR__ . '/core/Request.php';
 require_once __DIR__ . '/core/Response.php';
 require_once __DIR__ . '/functions/view_helper.php';
 require_once __DIR__ . '/controllers/MainController.php';
+require_once __DIR__ . '/controllers/PaisesController.php';
 
 $request = new Request();
 $response = new Response();
