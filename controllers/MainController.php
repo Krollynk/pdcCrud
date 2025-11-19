@@ -17,7 +17,6 @@ class MainController {
         $resultado = $controller->getPaisesById($request->query('id'));
         renderLayout('view_paises_editar', $resultado);
     }
-
     public static function viewDepartamentos()
     {
         $controller = new DepartamentosController();
@@ -33,5 +32,21 @@ class MainController {
         $controller = new DepartamentosController();
         $resultado = $controller->getDepartamentosById($request->query('id'));
         renderLayout('view_departamentos_editar', $resultado);
+    }
+    public static function viewMunicipios()
+    {
+        $controller = new MunicipiosController();
+        $resultado = $controller->getMunicipios();
+        renderLayout('view_municipios', $resultado);
+    }
+    public static function viewMunicipiosNuevo()
+    {
+        renderLayout('view_municipios_nuevo');
+    }
+    public static function viewMunicipiosEditar(Request $request)
+    {
+        $controller = new MunicipiosController();
+        $resultado = $controller->getMunicipiosById($request->query('id'));
+        renderLayout('view_municipios_editar', $resultado);
     }
 }

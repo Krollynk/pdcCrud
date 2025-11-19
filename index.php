@@ -10,6 +10,7 @@ require_once __DIR__ . '/functions/view_helper.php';
 require_once __DIR__ . '/controllers/MainController.php';
 require_once __DIR__ . '/controllers/PaisesController.php';
 require_once __DIR__ . '/controllers/DepartamentosController.php';
+require_once __DIR__ . '/controllers/MunicipiosController.php';
 
 $request = new Request();
 $response = new Response();
@@ -29,6 +30,11 @@ $router->get('/view_departamentos', [MainController::class, 'viewDepartamentos']
 $router->get('/view_departamentos_nuevo', [MainController::class, 'viewDepartamentosNuevo']);
 $router->get('/view_departamentos_editar', [MainController::class, 'viewDepartamentosEditar']);
 $router->get('/departamentos_eliminar', [DepartamentosController::class, 'deleteDepartamentos']);
+//municipios
+$router->get('/view_municipios', [MainController::class, 'viewMunicipios']);
+$router->get('/view_municipios_nuevo', [MainController::class, 'viewMunicipiosNuevo']);
+$router->get('/view_municipios_editar', [MainController::class, 'viewMunicipiosEditar']);
+$router->get('/municipios_eliminar', [DepartamentosController::class, 'deleteDepartamentos']);
 
 //rutas post
 $router->post('/guardar_pais', [PaisesController::class, 'insertPaises']);

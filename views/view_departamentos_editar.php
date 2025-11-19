@@ -20,4 +20,4 @@
 <script>
     const registros = <?php echo json_encode($data); ?>;
 </script>
-<script src="/js/jsDataSelect.js"></script>
+<script src="../js/jsDataSelectPaises.js"></script>
