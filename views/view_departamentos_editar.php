@@ -13,7 +13,7 @@
         </div>
         <div class="main_div">
             <p>Pais</p>
-            <select class="paiPais input_text" name="paiPais" id="dataSelect" required></select>
+            <select class="paiPais input_text" name="paiPais" id="dataSelectPais" required></select>
         </div>
     </form>
 </div>

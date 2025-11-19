@@ -11,12 +11,19 @@ class MunicipiosController {
                 't.munMunicipio',
                 't.depId',
                 'p.depDepartamento',
+                'p.paiId',
+                's.paiPais'
             ],
             'joins'=> array(
                 array(
                     'tabla' => 'pdcDepartamentos',
                     'alias' => 'p',
                     'on' => 't.depId = p.depId'
+                ),
+                array(
+                    'tabla' => 'pdcPais',
+                    'alias' => 's',
+                    'on' => 'p.paiId = s.paiId'
                 ),
             ),
             'where'=> array(
@@ -43,12 +50,19 @@ class MunicipiosController {
                 't.munMunicipio',
                 't.depId',
                 'p.depDepartamento',
+                'p.paiId',
+                's.paiPais'
             ],
             'joins'=> array(
                 array(
                     'tabla' => 'pdcDepartamentos',
                     'alias' => 'p',
                     'on' => 't.depId = p.depId'
+                ),
+                array(
+                    'tabla' => 'pdcPais',
+                    'alias' => 's',
+                    'on' => 'p.paiId = s.paiId'
                 ),
             ),
             'where'=> array(

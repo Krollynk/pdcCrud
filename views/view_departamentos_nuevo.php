@@ -11,8 +11,8 @@
             <input size="60" type="text" class="depDepartamento input_text" name="depDepartamento" autocomplete="off" required>
         </div>
         <div class="main_div">
-            <p>Siglas</p>
-            <select class="paiPais input_text" name="paiPais" id="dataSelect" required></select>
+            <p>Pais</p>
+            <select class="paiPais input_text" name="paiPais" id="dataSelectPais" required></select>
         </div>
     </form>
 </div>

@@ -34,12 +34,14 @@ $router->get('/departamentos_eliminar', [DepartamentosController::class, 'delete
 $router->get('/view_municipios', [MainController::class, 'viewMunicipios']);
 $router->get('/view_municipios_nuevo', [MainController::class, 'viewMunicipiosNuevo']);
 $router->get('/view_municipios_editar', [MainController::class, 'viewMunicipiosEditar']);
-$router->get('/municipios_eliminar', [DepartamentosController::class, 'deleteDepartamentos']);
+$router->get('/municipios_eliminar', [MunicipiosController::class, 'deleteMunicipios']);
 
 //rutas post
 $router->post('/guardar_pais', [PaisesController::class, 'insertPaises']);
 $router->post('/actualizar_pais', [PaisesController::class, 'updatePaises']);
 $router->post('/guardar_departamento', [DepartamentosController::class, 'insertDepartamentos']);
 $router->post('/actualizar_departamento', [DepartamentosController::class, 'updateDepartamentos']);
+$router->post('/guardar_municipio', [MunicipiosController::class, 'insertMunicipios']);
+$router->post('/actualizar_municipio', [MunicipiosController::class, 'updateMunicipios']);
 
 $router->dispatch($request);
