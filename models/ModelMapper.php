@@ -58,8 +58,8 @@ class ModelMapper {
                 'paiId' => 'pdc_pai_id',
                 'depId' => 'pdc_dep_id',
                 'munId' => 'pdc_mun_id',
-                'eliminado' => 'pdc_dep_eliminado',
-                'fechaCreado' => 'pdc_dep_fecha_creado',
+                'eliminado' => 'pdc_emp_eliminado',
+                'fechaCreado' => 'pdc_emp_fecha_creado',
             ],
         ],
         'empresaColaborador' => [

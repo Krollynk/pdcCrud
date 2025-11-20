@@ -49,4 +49,20 @@ class MainController {
         $resultado = $controller->getMunicipiosById($request->query('id'));
         renderLayout('view_municipios_editar', $resultado);
     }
+    public static function viewEmpresas()
+    {
+        $controller = new EmpresasController();
+        $resultado = $controller->getEmpresas();
+        renderLayout('view_empresas', $resultado);
+    }
+    public static function viewEmpresasNuevo()
+    {
+        renderLayout('view_empresas_nuevo');
+    }
+    public static function viewEmpresasEditar(Request $request)
+    {
+        $controller = new EmpresasController();
+        $resultado = $controller->getEmpresasById($request->query('id'));
+        renderLayout('view_empresas_editar', $resultado);
+    }
 }

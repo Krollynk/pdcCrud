@@ -1,9 +1,11 @@
+let paisesList = [];
 async function autocompletePaises() {
     const select = document.getElementById("dataSelectPais");
 
     try {
         const response = await fetch("/functions/api_paises.php");
         const paises = await response.json();
+        paisesList = paises;
 
         select.innerHTML = "";
 
@@ -19,8 +21,10 @@ async function autocompletePaises() {
             select.appendChild(option);
         });
 
-        const valorActual = registros[0].paiId;
-        if (valorActual) select.value = valorActual;
+        if (typeof registros !== "undefined" && registros.length > 0) {
+            const valorActual = registros[0].paiId;
+            if (valorActual) select.value = valorActual;
+        }
 
     } catch (error) {
         console.error("Error cargando países:", error);

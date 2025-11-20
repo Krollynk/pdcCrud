@@ -11,6 +11,7 @@ require_once __DIR__ . '/controllers/MainController.php';
 require_once __DIR__ . '/controllers/PaisesController.php';
 require_once __DIR__ . '/controllers/DepartamentosController.php';
 require_once __DIR__ . '/controllers/MunicipiosController.php';
+require_once __DIR__ . '/controllers/EmpresasController.php';
 
 $request = new Request();
 $response = new Response();
@@ -35,13 +36,23 @@ $router->get('/view_municipios', [MainController::class, 'viewMunicipios']);
 $router->get('/view_municipios_nuevo', [MainController::class, 'viewMunicipiosNuevo']);
 $router->get('/view_municipios_editar', [MainController::class, 'viewMunicipiosEditar']);
 $router->get('/municipios_eliminar', [MunicipiosController::class, 'deleteMunicipios']);
+//municipios
+$router->get('/view_empresas', [MainController::class, 'viewEmpresas']);
+$router->get('/view_empresas_nuevo', [MainController::class, 'viewEmpresasNuevo']);
+$router->get('/view_empresas_editar', [MainController::class, 'viewEmpresasEditar']);
+$router->get('/empresas_eliminar', [EmpresasController::class, 'deleteEmpresas']);
 
 //rutas post
 $router->post('/guardar_pais', [PaisesController::class, 'insertPaises']);
 $router->post('/actualizar_pais', [PaisesController::class, 'updatePaises']);
+
 $router->post('/guardar_departamento', [DepartamentosController::class, 'insertDepartamentos']);
 $router->post('/actualizar_departamento', [DepartamentosController::class, 'updateDepartamentos']);
+
 $router->post('/guardar_municipio', [MunicipiosController::class, 'insertMunicipios']);
 $router->post('/actualizar_municipio', [MunicipiosController::class, 'updateMunicipios']);
+
+$router->post('/guardar_empresa', [EmpresasController::class, 'insertEmpresas']);
+$router->post('/actualizar_empresa', [EmpresasController::class, 'updateEmpresas']);
 
 $router->dispatch($request);
