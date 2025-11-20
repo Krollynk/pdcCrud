@@ -96,6 +96,43 @@ function viewMunicipios(registrosPagina){
     });
 }
 
+function viewEmpresas(registrosPagina){
+    registrosPagina.forEach(registro => {
+        const fila = tabla.insertRow();
+        fila.id = registro.empId;
+        const celdaRazon = fila.insertCell();
+        const celdaCorreo = fila.insertCell();
+        const celdaMunicipio = fila.insertCell();
+        const celdaPais = fila.insertCell();
+        const celdaAcciones = fila.insertCell();
+
+        const btnVer = document.createElement('a');
+        const btnEditar = document.createElement('a');
+        const btnEliminar = document.createElement('a');
+
+        btnVer.textContent = "Ver";
+        btnEditar.textContent = "Editar";
+        btnEliminar.textContent = "Eliminar";
+
+        btnVer.href = "/view_empresas_ver?id=" + registro.empId;
+        btnEditar.href = "/view_empresas_editar?id=" + registro.empId;
+        btnEliminar.href = "/empresas_eliminar?id=" + registro.empId;
+
+        btnVer.classList.add("btn_editar");
+        btnEditar.classList.add("btn_editar");
+        btnEliminar.classList.add("btn_eliminar");
+
+        celdaRazon.textContent = registro.empRazonSocial
+        celdaCorreo.textContent = registro.empCorreo
+        celdaMunicipio.textContent = registro.munMunicipio
+        celdaPais.textContent = registro.paiPais;
+
+        celdaAcciones.appendChild(btnVer);
+        celdaAcciones.appendChild(btnEditar);
+        celdaAcciones.appendChild(btnEliminar);
+    });
+}
+
 function mostrarTabla(pagina) {
     tabla.innerHTML = ''; // Limpiar la tabla
     const inicio = (pagina - 1) * registrosPorPagina;
@@ -108,6 +145,8 @@ function mostrarTabla(pagina) {
         viewDepartamentos(registrosPagina);
     }else if(window.location.pathname === '/view_municipios'){
         viewMunicipios(registrosPagina);
+    }else if(window.location.pathname === '/view_empresas'){
+        viewEmpresas(registrosPagina);
     }
 }
 
