@@ -235,7 +235,7 @@ function mostrarTabla(pagina) {
     const fin = inicio + registrosPorPagina;
     const registrosPagina = registros.slice(inicio, fin);
 
-    if(window.location.pathname === '/view_paises'){
+    if(window.location.pathname === '/view_paises' || window.location.pathname === '/'){
         viewPaises(registrosPagina);
     }else if(window.location.pathname === '/view_departamentos'){
         viewDepartamentos(registrosPagina);
