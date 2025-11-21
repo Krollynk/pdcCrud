@@ -65,6 +65,12 @@ class MainController {
         $resultado = $controller->getEmpresasById($request->query('id'));
         renderLayout('view_empresas_editar', $resultado);
     }
+    public static function viewEmpresasVer(Request $request)
+    {
+        $controller = new EmpresasController();
+        $resultado = $controller->getEmpresasById($request->query('id'));
+        renderLayout('view_empresas_ver', $resultado);
+    }
     public static function viewColaboradores()
     {
         $controller = new ColaboradoresController();

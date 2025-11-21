@@ -210,6 +210,25 @@ function viewEmpresasAsociadasVer(registrosPagina){
     });
 }
 
+function viewColaboradoresAsociadosVer(registrosPagina){
+    registrosPagina.forEach(registro => {
+        const fila = tabla.insertRow();
+        fila.id = registro.empId;
+        const celdaNombre = fila.insertCell();
+        const celdaApellido = fila.insertCell();
+        const celdaEdad = fila.insertCell();
+        const celdaCorreo = fila.insertCell();
+        const celdaTelefono = fila.insertCell();
+
+        celdaNombre.textContent = registro.colNombre;
+        celdaApellido.textContent = registro.colApellido;
+        celdaEdad.textContent = registro.colEdad;
+        celdaCorreo.textContent = registro.colCorreo;
+        celdaTelefono.textContent = registro.colTelefono;
+
+    });
+}
+
 function mostrarTabla(pagina) {
     tabla.innerHTML = ''; // Limpiar la tabla
     const inicio = (pagina - 1) * registrosPorPagina;
@@ -230,6 +249,8 @@ function mostrarTabla(pagina) {
         viewEmpresasAsociadas(registrosPagina);
     }else if(window.location.pathname === '/view_colaboradores_ver'){
         viewEmpresasAsociadasVer(registrosPagina);
+    }else if(window.location.pathname === '/view_empresas_ver'){
+        viewColaboradoresAsociadosVer(registrosPagina);
     }
 }
 

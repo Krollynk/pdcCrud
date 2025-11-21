@@ -41,6 +41,7 @@ $router->get('/municipios_eliminar', [MunicipiosController::class, 'deleteMunici
 $router->get('/view_empresas', [MainController::class, 'viewEmpresas']);
 $router->get('/view_empresas_nuevo', [MainController::class, 'viewEmpresasNuevo']);
 $router->get('/view_empresas_editar', [MainController::class, 'viewEmpresasEditar']);
+$router->get('/view_empresas_ver', [MainController::class, 'viewEmpresasVer']);
 $router->get('/empresas_eliminar', [EmpresasController::class, 'deleteEmpresas']);
 //colaboradores
 $router->get('/view_colaboradores', [MainController::class, 'viewColaboradores']);
