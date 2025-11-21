@@ -8,15 +8,15 @@ include '../controllers/PaisesController.php';
 
 $controller = new PaisesController();
 $resultado = $controller->getPaises();
-$paises_array = array();
+$data_array = array();
 
 if(count($resultado) > 0) {
     foreach($resultado as $row){
-        $paises_array[] = [
+        $data_array[] = [
             "id" => $row["paiId"],
             "nombre" => $row["paiPais"]
         ];
     }
 }
 
-echo json_encode($paises_array);
+echo json_encode($data_array);

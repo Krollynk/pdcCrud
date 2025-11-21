@@ -27,7 +27,7 @@ async function autocompleteDepartamentos() {
         }
 
     } catch (error) {
-        console.error("Error cargando países:", error);
+        console.error("Error cargando departamentos:", error);
     }
 }
 

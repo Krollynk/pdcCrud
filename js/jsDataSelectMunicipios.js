@@ -26,7 +26,7 @@ async function autocompleteMunicipios() {
         }
 
     } catch (error) {
-        console.error("Error cargando países:", error);
+        console.error("Error cargando municipios:", error);
     }
 }
 

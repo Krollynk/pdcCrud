@@ -33,8 +33,8 @@ class ModelMapper {
                 'fechaCreado' => 'pdc_dep_fecha_creado',
             ],
         ],
-        'pdcColaborador' => [
-            'table' => 'pdc_colaborador',
+        'pdcColaboradores' => [
+            'table' => 'pdc_colaboradores',
             'fields' => [
                 'colId' => 'pdc_col_id',
                 'colNombre' => 'pdc_col_nombre',
