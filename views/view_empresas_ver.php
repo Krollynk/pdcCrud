@@ -1,6 +1,6 @@
 <div class="grid_box main_content">
     <div class="title_bar">
-        <h2>Editar Empresa</h2>
+        <h2>Detalle de Empresa</h2>
         <a class="btn-agregar" href="/view_empresas">Regresar</a>
     </div>
     <div class="main_form" id="main_form">
