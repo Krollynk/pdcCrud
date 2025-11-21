@@ -8,11 +8,11 @@ include '../controllers/DepartamentosController.php';
 
 $controller = new DepartamentosController();
 $resultado = $controller->getDepartamentos();
-$paises_array = array();
+$data_array = array();
 
 if(count($resultado) > 0) {
     foreach($resultado as $row){
-        $paises_array[] = [
+        $data_array[] = [
             "id" => $row["depId"],
             "nombre" => $row["depDepartamento"],
             "paiId" => $row["paiId"],
@@ -20,4 +20,4 @@ if(count($resultado) > 0) {
     }
 }
 
-echo json_encode($paises_array);
+echo json_encode($data_array);

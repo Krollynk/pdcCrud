@@ -3,20 +3,18 @@ include '../config/data_source.php';
 include '../models/ModelMapper.php';
 include '../core/DatabaseExecutor.php';
 include '../core/QueryBuilder.php';
-include '../controllers/MunicipiosController.php';
+include '../controllers/EmpresasController.php';
 
 
-$controller = new MunicipiosController();
-$resultado = $controller->getMunicipios();
+$controller = new EmpresasController();
+$resultado = $controller->getEmpresas();
 $data_array = array();
 
 if(count($resultado) > 0) {
     foreach($resultado as $row){
         $data_array[] = [
-            "id" => $row["munId"],
-            "nombre" => $row["munMunicipio"],
-            "depId" => $row["depId"],
-            "paiId" => $row["paiId"],
+            "id" => $row["empId"],
+            "nombre" => $row["empRazonSocial"],
         ];
     }
 }

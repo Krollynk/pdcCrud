@@ -65,4 +65,32 @@ class MainController {
         $resultado = $controller->getEmpresasById($request->query('id'));
         renderLayout('view_empresas_editar', $resultado);
     }
+    public static function viewEmpresasVer(Request $request)
+    {
+        $controller = new EmpresasController();
+        $resultado = $controller->getEmpresasById($request->query('id'));
+        renderLayout('view_empresas_ver', $resultado);
+    }
+    public static function viewColaboradores()
+    {
+        $controller = new ColaboradoresController();
+        $resultado = $controller->getColaboradores();
+        renderLayout('view_colaboradores', $resultado);
+    }
+    public static function viewColaboradoresNuevo()
+    {
+        renderLayout('view_colaboradores_nuevo');
+    }
+    public static function viewColaboradoresEditar(Request $request)
+    {
+        $controller = new ColaboradoresController();
+        $resultado = $controller->getColaboradoresById($request->query('id'));
+        renderLayout('view_colaboradores_editar', $resultado);
+    }
+    public static function viewColaboradoresVer(Request $request)
+    {
+        $controller = new ColaboradoresController();
+        $resultado = $controller->getColaboradoresById($request->query('id'));
+        renderLayout('view_colaboradores_ver', $resultado);
+    }
 }

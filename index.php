@@ -12,6 +12,7 @@ require_once __DIR__ . '/controllers/PaisesController.php';
 require_once __DIR__ . '/controllers/DepartamentosController.php';
 require_once __DIR__ . '/controllers/MunicipiosController.php';
 require_once __DIR__ . '/controllers/EmpresasController.php';
+require_once __DIR__ . '/controllers/ColaboradoresController.php';
 
 $request = new Request();
 $response = new Response();
@@ -36,11 +37,18 @@ $router->get('/view_municipios', [MainController::class, 'viewMunicipios']);
 $router->get('/view_municipios_nuevo', [MainController::class, 'viewMunicipiosNuevo']);
 $router->get('/view_municipios_editar', [MainController::class, 'viewMunicipiosEditar']);
 $router->get('/municipios_eliminar', [MunicipiosController::class, 'deleteMunicipios']);
-//municipios
+//empresas
 $router->get('/view_empresas', [MainController::class, 'viewEmpresas']);
 $router->get('/view_empresas_nuevo', [MainController::class, 'viewEmpresasNuevo']);
 $router->get('/view_empresas_editar', [MainController::class, 'viewEmpresasEditar']);
+$router->get('/view_empresas_ver', [MainController::class, 'viewEmpresasVer']);
 $router->get('/empresas_eliminar', [EmpresasController::class, 'deleteEmpresas']);
+//colaboradores
+$router->get('/view_colaboradores', [MainController::class, 'viewColaboradores']);
+$router->get('/view_colaboradores_nuevo', [MainController::class, 'viewColaboradoresNuevo']);
+$router->get('/view_colaboradores_editar', [MainController::class, 'viewColaboradoresEditar']);
+$router->get('/view_colaboradores_ver', [MainController::class, 'viewColaboradoresVer']);
+$router->get('/colaboradores_eliminar', [ColaboradoresController::class, 'deleteColaboradores']);
 
 //rutas post
 $router->post('/guardar_pais', [PaisesController::class, 'insertPaises']);
@@ -54,5 +62,8 @@ $router->post('/actualizar_municipio', [MunicipiosController::class, 'updateMuni
 
 $router->post('/guardar_empresa', [EmpresasController::class, 'insertEmpresas']);
 $router->post('/actualizar_empresa', [EmpresasController::class, 'updateEmpresas']);
+
+$router->post('/guardar_colaborador', [ColaboradoresController::class, 'insertColaboradores']);
+$router->post('/actualizar_colaborador', [ColaboradoresController::class, 'updateColaboradores']);
 
 $router->dispatch($request);
